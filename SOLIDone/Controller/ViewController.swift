@@ -10,8 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
     // External dependencies
-    let networkService = NetworkService()
-    let dataStore = DataStore()
+    var networkService = NetworkService()
+    var dataStore = DataStore()
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
@@ -26,32 +26,25 @@ class ViewController: UIViewController {
         dataStore.loadData()
         networkService.fetchData()
     }
-
-    // MARK:- Business Logic
-    
-    func checkName() {
-        guard let name = nameTextField.text, name != "" else { return alert()}
-        dataStore.saveData(name)
-        print("Name \(name) is saved")
-        nameLabel.text = name
-    }
-    
-    // MARK:- User Interaction and interface
-    
-    func alert() {
-        let alert = UIAlertController.init(title: "Warning", message: "you can't leave field emplty", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(ok)
-        present(alert, animated: true, completion: nil)
-    }
+    // MARK:- Interaction with user
     
     @IBAction func nameTextFieldAction(_ sender: UITextField) {
         nameLabel.text = nameTextField.text
+        
     }
 
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        checkName()
+        chekName()
+        
     }
+    // MARK:- Business Logic
+    func chekName() {
+        guard let name = nameTextField.text, name != "" else { return K.alert("Type a name", self)}
+        dataStore.saveData(name)
+        
+    }
+    
+
 
 }
 
