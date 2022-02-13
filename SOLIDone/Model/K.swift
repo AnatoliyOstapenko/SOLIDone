@@ -19,9 +19,3 @@ struct K {
     }
     
 }
-
-enum CustomError: Error {
-    case errorOne
-    case errorTwo
-    case errorThree
-}
