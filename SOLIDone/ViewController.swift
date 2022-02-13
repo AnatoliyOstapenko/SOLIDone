@@ -6,29 +6,12 @@
 //
 
 import UIKit
-import CoreData
-
-struct NewsAPI: Decodable {
-    var articles: [Articles]
-}
-
-struct Articles: Decodable {
-    var source: Source
-    var title: String
-    var url: String
-    var urlToImage: String?
-}
-
-struct Source: Decodable {
-    var name: String
-}
 
 class ViewController: UIViewController {
 
-    var coreData = [SolidCoreData]()
-
-    var networkService = NetworkService()
-    var dataStore = DataStore()
+    // External dependencies
+    let networkService = NetworkService()
+    let dataStore = DataStore()
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!

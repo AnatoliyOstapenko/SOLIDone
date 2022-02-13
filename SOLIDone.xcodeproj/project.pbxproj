@@ -17,6 +17,7 @@
 		FA26F7E427B91E4C006D2BE9 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26F7E327B91E4C006D2BE9 /* K.swift */; };
 		FA26F7E727B93061006D2BE9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26F7E627B93061006D2BE9 /* NetworkService.swift */; };
 		FA26F7EA27B9325E006D2BE9 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26F7E927B9325E006D2BE9 /* DataStore.swift */; };
+		FA26F7ED27B93558006D2BE9 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26F7EC27B93558006D2BE9 /* NewsAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FA26F7E327B91E4C006D2BE9 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		FA26F7E627B93061006D2BE9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FA26F7E927B9325E006D2BE9 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		FA26F7EC27B93558006D2BE9 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				FA26F7CD27B817DC006D2BE9 /* SceneDelegate.swift */,
 				FA26F7CF27B817DC006D2BE9 /* ViewController.swift */,
 				FA26F7E627B93061006D2BE9 /* NetworkService.swift */,
+				FA26F7EC27B93558006D2BE9 /* NewsAPI.swift */,
 				FA26F7E927B9325E006D2BE9 /* DataStore.swift */,
 				FA26F7D127B817DC006D2BE9 /* Main.storyboard */,
 				FA26F7D727B817E0006D2BE9 /* Assets.xcassets */,
@@ -156,6 +159,7 @@
 				FA26F7D627B817DC006D2BE9 /* SOLIDone.xcdatamodeld in Sources */,
 				FA26F7E727B93061006D2BE9 /* NetworkService.swift in Sources */,
 				FA26F7CE27B817DC006D2BE9 /* SceneDelegate.swift in Sources */,
+				FA26F7ED27B93558006D2BE9 /* NewsAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

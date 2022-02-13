@@ -10,7 +10,7 @@ import Foundation
 class NetworkService {
 
     func requestData(completion: @escaping(Data?, Error?) -> Void) {
-        guard let url = URL(string: K.apiKey) else { return }
+        guard let url = URL(string: K.url) else { return }
         
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
