@@ -27,6 +27,7 @@ class ViewController: UIViewController {
 
     var coreData = [SolidCoreData]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var networkService = NetworkService()
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = 25.0
         loadData() // Core Data
-        fetchData() // Networking
+        networkService.fetchData()
     }
 
     // MARK:- Business Logic
@@ -49,6 +50,8 @@ class ViewController: UIViewController {
         print("Name \(name) is saved")
         nameLabel.text = name
     }
+    
+    // MARK:- User Interaction and interface
     
     func alert() {
         let alert = UIAlertController.init(title: "Warning", message: "you can't leave field emplty", preferredStyle: .alert)
@@ -88,29 +91,7 @@ class ViewController: UIViewController {
             }
         } catch { print("load data failed: \(error)")}
     }
-    // MARK:- Networking
-    
-    func requestData(completion: @escaping(Data?, Error?) -> Void) {
-        guard let url = URL(string: K.apiKey) else { return }
-        
-        let request = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
-                completion(data, error)
-            }
-        }
-        task.resume()
-    }
-    
-    func fetchData() {
-        requestData { (data, error) in
-            let decoder = JSONDecoder()
-            guard error == nil, let data = data else { return }
-            
-            let response = try? decoder.decode(NewsAPI.self, from: data)
-            print(response as Any)
-        }
-    }
+ 
 }
 
 

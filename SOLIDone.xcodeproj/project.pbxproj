@@ -15,6 +15,7 @@
 		FA26F7D827B817E0006D2BE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA26F7D727B817E0006D2BE9 /* Assets.xcassets */; };
 		FA26F7DB27B817E1006D2BE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA26F7D927B817E1006D2BE9 /* LaunchScreen.storyboard */; };
 		FA26F7E427B91E4C006D2BE9 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26F7E327B91E4C006D2BE9 /* K.swift */; };
+		FA26F7E727B93061006D2BE9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26F7E627B93061006D2BE9 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FA26F7DA27B817E1006D2BE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA26F7DC27B817E1006D2BE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA26F7E327B91E4C006D2BE9 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		FA26F7E627B93061006D2BE9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				FA26F7E327B91E4C006D2BE9 /* K.swift */,
 				FA26F7CD27B817DC006D2BE9 /* SceneDelegate.swift */,
 				FA26F7CF27B817DC006D2BE9 /* ViewController.swift */,
+				FA26F7E627B93061006D2BE9 /* NetworkService.swift */,
 				FA26F7D127B817DC006D2BE9 /* Main.storyboard */,
 				FA26F7D727B817E0006D2BE9 /* Assets.xcassets */,
 				FA26F7D927B817E1006D2BE9 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 				FA26F7E427B91E4C006D2BE9 /* K.swift in Sources */,
 				FA26F7CC27B817DC006D2BE9 /* AppDelegate.swift in Sources */,
 				FA26F7D627B817DC006D2BE9 /* SOLIDone.xcdatamodeld in Sources */,
+				FA26F7E727B93061006D2BE9 /* NetworkService.swift in Sources */,
 				FA26F7CE27B817DC006D2BE9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
