@@ -8,10 +8,23 @@
 import UIKit
 import CoreData
 
+struct NewsAPI: Decodable {
+    var articles: [Articles]
+}
+
+struct Articles: Decodable {
+    var source: Source
+    var title: String
+    var url: String
+    var urlToImage: String?
+}
+
+struct Source: Decodable {
+    var name: String
+}
+
 class ViewController: UIViewController {
-    
-    
-    
+
     var coreData = [SolidCoreData]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -24,7 +37,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = 25.0
-        loadData()
+        loadData() // Core Data
+        fetchData() // Networking
     }
 
     // MARK:- Business Logic
@@ -86,6 +100,16 @@ class ViewController: UIViewController {
             }
         }
         task.resume()
+    }
+    
+    func fetchData() {
+        requestData { (data, error) in
+            let decoder = JSONDecoder()
+            guard error == nil, let data = data else { return }
+            
+            let response = try? decoder.decode(NewsAPI.self, from: data)
+            print(response as Any)
+        }
     }
 }
 
