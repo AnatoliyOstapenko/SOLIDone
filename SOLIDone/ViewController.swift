@@ -10,6 +10,8 @@ import CoreData
 
 class ViewController: UIViewController {
     
+    
+    
     var coreData = [SolidCoreData]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -18,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
 
     // MARK:- View LifeCicle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = 25.0
@@ -58,20 +61,32 @@ class ViewController: UIViewController {
         coreData.append(item)
         do {
             try context.save()
-        } catch let error {
-            print("load data failed, error \(error)")
-        }
+        } catch { print("load data failed, error \(error)") }
+            
     }
     // Fetch data from Core Data
     func loadData() {
         do {
             coreData = try context.fetch(SolidCoreData.fetchRequest())
+            // Print every name from storage
             for index in coreData {
                 print("saved name is \(index.name ?? "no name")")
             }
         } catch { print("load data failed: \(error)")}
     }
+    // MARK:- Networking
     
+    func requestData(completion: @escaping(Data?, Error?) -> Void) {
+        guard let url = URL(string: K.apiKey) else { return }
+        
+        let request = URLRequest(url: url)
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
+                completion(data, error)
+            }
+        }
+        task.resume()
+    }
 }
 
 
