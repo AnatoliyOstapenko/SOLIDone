@@ -9,8 +9,8 @@ import Foundation
 
 class NetworkService {
 
-    func requestData(completion: @escaping(Data?, Error?) -> Void) {
-        guard let url = URL(string: Password.url) else { return }
+    func requestData(_ url: String, completion: @escaping(Data?, Error?) -> Void) {
+        guard let url = URL(string: url) else { return }
         
         let request = URLRequest(url: url)
         let task = createDataTask(from: request, completion: completion)

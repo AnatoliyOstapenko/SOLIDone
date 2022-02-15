@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         dataStore.loadData() // load data from Core Data
         
         //Activate completion to print title
-        networkDataFetcher.fetchData { (data) in
+        networkDataFetcher.fetchNews(Password.url) { (data) in
             guard let data = data else { return }
             for index in 0...data.articles.count - 1 {
                 print(data.articles[index].title)
