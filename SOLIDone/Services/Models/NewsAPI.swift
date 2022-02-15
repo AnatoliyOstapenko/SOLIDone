@@ -8,16 +8,16 @@
 import Foundation
 
 struct NewsAPI: Decodable {
-    var articles: [Articles]
+    let articles: [Articles]
 }
 
 struct Articles: Decodable {
-    var source: Source
-    var title: String
-    var url: String
-    var urlToImage: String?
+    let source: Source
+    let title: String
+    let url: String
+    let urlToImage: String?
 }
 
 struct Source: Decodable {
-    var name: String
+    let name: String
 }
