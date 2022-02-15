@@ -23,9 +23,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = 25.0
-
-        dataStore.loadData()
-        networkDataFetcher.fetchData()
+        dataStore.loadData() // load data from Core Data
+        
+        //Activate completion to print title
+        networkDataFetcher.fetchData { (data) in
+            guard let data = data else { return }
+            for index in 0...data.articles.count - 1 {
+                print(data.articles[index].title)
+            }
+        }
     }
     // MARK:- Interaction with user
     

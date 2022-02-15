@@ -12,13 +12,13 @@ class NetworkDataFetcher {
     // External dependencies
     var networkService = NetworkService()
     
-    func fetchData() {
+    func fetchData(completion: @escaping (NewsAPI?) -> Void) {
         networkService.requestData { (data, error) in
             let decoder = JSONDecoder()
             guard error == nil, let data = data else { return }
             
             let response = try? decoder.decode(NewsAPI.self, from: data)
-            print(response as Any)
+            completion(response)
         }
     }
 }
