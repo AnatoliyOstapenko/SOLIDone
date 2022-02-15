@@ -21,25 +21,17 @@ class NetworkDataFetcher {
             completion(response)
         }
         
-//        { (data, error) in
-//            let decoder = JSONDecoder()
-//            guard error == nil, let data = data else { return }
-//
-//            let response = try? decoder.decode(NewsAPI.self, from: data)
-//            completion(response)
-//        }
+        
+    }
+    func fetchAppleRss(_ url: String, completion: @escaping (AppleRssAPI?) -> Void) {
+        networkService.requestData(url) { (data, error) in
+            let decoder = JSONDecoder()
+            guard error == nil, let data = data else { return }
+
+            let response = try? decoder.decode(AppleRssAPI.self, from: data)
+            completion(response)
+        }
         
         
     }
-//    func fetchAppleRss(completion: @escaping (AppleRssAPI?) -> Void) {
-//        networkService.requestData { (data, error) in
-//            let decoder = JSONDecoder()
-//            guard error == nil, let data = data else { return }
-//
-//            let response = try? decoder.decode(AppleRssAPI.self, from: data)
-//            completion(response)
-//        }
-        
-        
-//    }
 }

@@ -25,11 +25,18 @@ class ViewController: UIViewController {
         saveButton.layer.cornerRadius = 25.0
         dataStore.loadData() // load data from Core Data
         
-        //Activate completion to print title
+        //Activate completion handler to print title from News API
         networkDataFetcher.fetchNews(Password.url) { (data) in
             guard let data = data else { return }
             for index in 0...data.articles.count - 1 {
                 print(data.articles[index].title)
+            }
+        }
+        // Add second completion handler to print top app name company in UA
+        networkDataFetcher.fetchAppleRss(Password.appleURL) { (data) in
+            guard let data = data else { return }
+            for index in 0...data.feed.results.count - 1 {
+                print(data.feed.results[index].artistName)
             }
         }
     }
