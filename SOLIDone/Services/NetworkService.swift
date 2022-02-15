@@ -21,15 +21,8 @@ class NetworkService {
         task.resume()
     }
     
-    func fetchData() {
-        requestData { (data, error) in
-            let decoder = JSONDecoder()
-            guard error == nil, let data = data else { return }
-            
-            let response = try? decoder.decode(NewsAPI.self, from: data)
-            print(response as Any)
-        }
-    }
+    
+    
     
     
     

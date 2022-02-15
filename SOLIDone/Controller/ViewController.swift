@@ -10,8 +10,9 @@ import UIKit
 class ViewController: UIViewController {
 
     // External dependencies
-    var networkService = NetworkService()
+    //var networkService = NetworkService()
     var dataStore = DataStore()
+    var networkDataFetcher = NetworkDataFetcher()
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
         saveButton.layer.cornerRadius = 25.0
 
         dataStore.loadData()
-        networkService.fetchData()
+        networkDataFetcher.fetchData()
     }
     // MARK:- Interaction with user
     

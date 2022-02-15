@@ -17,6 +17,7 @@ class DataStore {
     func saveData(_ data: String) {
         let item = SolidCoreData(context: context)
         item.name = data
+        print("\(data) is saved in Core Data store")
         coreData.append(item)
         do {
             try context.save()
