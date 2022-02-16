@@ -39,6 +39,13 @@ class ViewController: UIViewController {
                 print(data.feed.results[index].artistName)
             }
         }
+        // Add third completion handler to print artist name of audiobooks in UK
+        networkDataFetcher.fetchAppleRss(Password.appleBooks) { (data) in
+            guard let data = data else { return }
+            for index in 0...data.feed.results.count - 1 {
+                print(data.feed.results[index].artistName)
+            }
+        }
     }
     // MARK:- Interaction with user
     
