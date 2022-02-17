@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     // External dependencies
     //var networkService = NetworkService()
     var dataStore = DataStore()
-    var networkDataFetcher = NetworkDataFetcher()
+    var dataFetcherService = DataFetcherService()
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
@@ -25,24 +25,14 @@ class ViewController: UIViewController {
         saveButton.layer.cornerRadius = 25.0
         dataStore.loadData() // load data from Core Data
         
-        //Activate completion handler to print title from News API
-        networkDataFetcher.fetchNews(Password.url) { (data) in
-            guard let data = data else { return }
+        dataFetcherService.fetchNews { (news) in
+            guard let data = news else { return }
             for index in 0...data.articles.count - 1 {
-                print(data.articles[index].title)
+                print(news?.articles[index].title)
             }
         }
-        // Add second completion handler to print top app name company in UA
-        networkDataFetcher.fetchAppleRss(Password.appleURL) { (data) in
-            guard let data = data else { return }
-            for index in 0...data.feed.results.count - 1 {
-                print(data.feed.results[index].artistName)
-            }
-        }
-        // Add third completion handler to print artist name of audiobooks in UK
-        networkDataFetcher.fetchGenericJSONData(Password.appleBooks) { (data) in
-            guard let data = data else { return }
-        }
+        
+
     }
     // MARK:- Interaction with user
     

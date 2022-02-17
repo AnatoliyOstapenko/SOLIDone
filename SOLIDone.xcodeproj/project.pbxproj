@@ -21,6 +21,7 @@
 		FA26F7FA27B99931006D2BE9 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26F7F927B99931006D2BE9 /* Password.swift */; };
 		FA26F80327BC377B006D2BE9 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26F7FD27BC2E41006D2BE9 /* NetworkDataFetcher.swift */; };
 		FA2B2C4027BC5B6C002AEE12 /* AppleRssAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B2C3F27BC5B6B002AEE12 /* AppleRssAPI.swift */; };
+		FA2B2C4327BDA1CC002AEE12 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B2C4227BDA1CB002AEE12 /* DataFetcherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FA26F7F927B99931006D2BE9 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		FA26F7FD27BC2E41006D2BE9 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		FA2B2C3F27BC5B6B002AEE12 /* AppleRssAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRssAPI.swift; sourceTree = "<group>"; };
+		FA2B2C4227BDA1CB002AEE12 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				FA26F7E327B91E4C006D2BE9 /* K.swift */,
 				FA26F7E927B9325E006D2BE9 /* DataStore.swift */,
 				FA26F7E627B93061006D2BE9 /* NetworkService.swift */,
+				FA2B2C4227BDA1CB002AEE12 /* DataFetcherService.swift */,
 				FA26F7FD27BC2E41006D2BE9 /* NetworkDataFetcher.swift */,
 				FA26F7F927B99931006D2BE9 /* Password.swift */,
 			);
@@ -204,6 +207,7 @@
 				FA26F7FA27B99931006D2BE9 /* Password.swift in Sources */,
 				FA2B2C4027BC5B6C002AEE12 /* AppleRssAPI.swift in Sources */,
 				FA26F7ED27B93558006D2BE9 /* NewsAPI.swift in Sources */,
+				FA2B2C4327BDA1CC002AEE12 /* DataFetcherService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
