@@ -17,12 +17,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
-
+    @IBOutlet weak var namesButton: UIButton!
+    
     // MARK:- View LifeCicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = 25.0
+        namesButton.layer.cornerRadius = 20.0
         dataStore.loadData() // load data from Core Data
         
         // Interaction with News Model, print every title from API
@@ -61,10 +63,8 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        K.alert("All data storage was delete", self)
-        dataStore.deleteData()
-        
+    @IBAction func namesButtonPressed(_ sender: UIButton) {
+        goToNamesVC()
     }
     // MARK:- Business Logic
     func chekName() {
@@ -72,9 +72,12 @@ class ViewController: UIViewController {
         dataStore.saveData(name)
         
     }
-    
-
-
+    // Sending an user to NamesVC
+    func goToNamesVC() {
+        let vc = UIStoryboard.init(name: "Names", bundle: nil).instantiateViewController(withIdentifier: K.namesStoryboard)
+        vc.modalPresentationStyle = .fullScreen // open NamesVC full screen
+        present(vc, animated: true, completion: nil)
+    }
 }
 
 

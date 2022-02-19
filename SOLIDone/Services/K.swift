@@ -17,5 +17,6 @@ struct K {
 
     }
     static let namesIdentifier = "NamesCell"
+    static let namesStoryboard = "Names"
     
 }

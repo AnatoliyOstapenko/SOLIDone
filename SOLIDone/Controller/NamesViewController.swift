@@ -20,6 +20,10 @@ class NamesViewController: UIViewController {
         namesTableView.delegate = self
 
     }
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 // MARK: - TableView DataSource
 
