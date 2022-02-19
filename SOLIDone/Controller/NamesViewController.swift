@@ -6,20 +6,24 @@
 //
 
 import UIKit
+//import CoreData
 
 class NamesViewController: UIViewController {
     
-    var array = [SolidCoreData]() // Invoke SolidCoreData to interact with table view
+    // External dependencies
+    var dataStore = DataStore()
+    var array = [SolidCoreData]()
     
     @IBOutlet weak var namesTableView: UITableView!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         namesTableView.dataSource = self
         namesTableView.delegate = self
-
+        dataStore.loadData() // fetch names from Core Data when VC appears
+        array = dataStore.coreData // transfer data from DataStore array to local array
     }
+    
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
@@ -35,6 +39,7 @@ extension NamesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.namesIdentifier, for: indexPath)
         cell.textLabel?.text = array[indexPath.row].name
+        cell.backgroundColor = .clear // set the same color to cell as local View backgroung color
         return cell
     }
 }
