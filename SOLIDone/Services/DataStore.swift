@@ -34,4 +34,16 @@ class DataStore {
             }
         } catch { print("load data failed: \(error)")}
     }
+    // Delete total all saved data
+    func deleteData() {
+        let item = SolidCoreData(context: context)
+        
+        do {
+            try context.delete(item)
+        } catch let error {
+            print("delete data failed: \(error)")
+        }
+        
+        
+    }
 }

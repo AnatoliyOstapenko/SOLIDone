@@ -59,6 +59,19 @@
                                     <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgR-xW-EFr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bG-w6-icy">
+                                <rect key="frame" x="282" y="54" width="120" height="34"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.92031438860000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Og0-AM-9dq"/>
+                                </constraints>
+                                <state key="normal" title="Edit Names">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M1e-Hu-R8q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
@@ -69,7 +82,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZFx-g0-n4h" secondAttribute="trailing" constant="10" id="Hpg-Sd-hen"/>
                             <constraint firstItem="ZFx-g0-n4h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="JgU-ru-JSM"/>
                             <constraint firstItem="ZFx-g0-n4h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="ODb-tu-sEa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8bG-w6-icy" secondAttribute="trailing" constant="12" id="RZc-q2-Mbf"/>
                             <constraint firstItem="rGb-3n-VhJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xv5-XX-Z5Z"/>
+                            <constraint firstItem="8bG-w6-icy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="uAW-9C-ZWi"/>
                         </constraints>
                     </view>
                     <connections>

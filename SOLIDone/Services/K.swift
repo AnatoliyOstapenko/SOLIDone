@@ -16,5 +16,6 @@ struct K {
         viewController.present(alert, animated: true, completion: nil)
 
     }
+    static let namesIdentifier = "NamesCell"
     
 }

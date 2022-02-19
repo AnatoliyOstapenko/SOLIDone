@@ -22,6 +22,8 @@
 		FA26F80327BC377B006D2BE9 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26F7FD27BC2E41006D2BE9 /* NetworkDataFetcher.swift */; };
 		FA2B2C4027BC5B6C002AEE12 /* AppleRssAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B2C3F27BC5B6B002AEE12 /* AppleRssAPI.swift */; };
 		FA2B2C4327BDA1CC002AEE12 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B2C4227BDA1CB002AEE12 /* DataFetcherService.swift */; };
+		FABEE6C927C131730088CC74 /* Names.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABEE6C827C131730088CC74 /* Names.storyboard */; };
+		FABEE6CC27C131D50088CC74 /* NamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEE6CB27C131D50088CC74 /* NamesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		FA26F7FD27BC2E41006D2BE9 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		FA2B2C3F27BC5B6B002AEE12 /* AppleRssAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRssAPI.swift; sourceTree = "<group>"; };
 		FA2B2C4227BDA1CB002AEE12 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
+		FABEE6C827C131730088CC74 /* Names.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Names.storyboard; sourceTree = "<group>"; };
+		FABEE6CB27C131D50088CC74 /* NamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FA26F7CF27B817DC006D2BE9 /* ViewController.swift */,
+				FABEE6CB27C131D50088CC74 /* NamesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				FA26F7D127B817DC006D2BE9 /* Main.storyboard */,
+				FABEE6C827C131730088CC74 /* Names.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 				FA26F7DB27B817E1006D2BE9 /* LaunchScreen.storyboard in Resources */,
 				FA26F7D827B817E0006D2BE9 /* Assets.xcassets in Resources */,
 				FA26F7D327B817DC006D2BE9 /* Main.storyboard in Resources */,
+				FABEE6C927C131730088CC74 /* Names.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +215,7 @@
 				FA2B2C4027BC5B6C002AEE12 /* AppleRssAPI.swift in Sources */,
 				FA26F7ED27B93558006D2BE9 /* NewsAPI.swift in Sources */,
 				FA2B2C4327BDA1CC002AEE12 /* DataFetcherService.swift in Sources */,
+				FABEE6CC27C131D50088CC74 /* NamesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

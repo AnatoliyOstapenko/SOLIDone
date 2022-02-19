@@ -25,10 +25,25 @@ class ViewController: UIViewController {
         saveButton.layer.cornerRadius = 25.0
         dataStore.loadData() // load data from Core Data
         
+        // Interaction with News Model, print every title from API
         dataFetcherService.fetchNews { (news) in
             guard let data = news else { return }
             for index in 0...data.articles.count - 1 {
-                print(news?.articles[index].title)
+                print(data.articles[index].title)
+            }
+        }
+        // Interaction with Apple RSS Model, print every artistName from API
+        dataFetcherService.fetchAppleApps { (apps) in
+            guard let data = apps else { return }
+            for index in 0...data.feed.results.count - 1 {
+                print(data.feed.results[index].artistName)
+            }
+        }
+        // Interaction with Apple RSS Model, print every name from API
+        dataFetcherService.fetchAppleBooks { (books) in
+            guard let data = books else { return }
+            for index in 0...data.feed.results.count - 1 {
+                print(data.feed.results[index].name)
             }
         }
         
@@ -43,6 +58,12 @@ class ViewController: UIViewController {
 
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         chekName()
+        
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        K.alert("All data storage was delete", self)
+        dataStore.deleteData()
         
     }
     // MARK:- Business Logic
