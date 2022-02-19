@@ -7,14 +7,23 @@
 
 import Foundation
 
-class NetworkDataFetcher {
+// Add a protocol to avoid external dependencies
+protocol Datafetcher {
+    func fetchGenericJSONData<T: Decodable>(_ url: String, completion: @escaping (T?) -> Void)
+}
+
+class NetworkDataFetcher: Datafetcher {
     
-    // External dependencies
-    var networkService = NetworkService()
+    // set networking to initialize NetworkService class via protocol
+    // it's not working in UIViewController
+    var networking: Networking?
+    init(networking: Networking = NetworkService()) {
+        self.networking = networking
+    }
 
     // Add generics to avoid funcion duplication
     func fetchGenericJSONData<T: Decodable>(_ url: String, completion: @escaping (T?) -> Void) {
-        networkService.requestData(url) { (data, error) in
+        networking?.requestData(url) { (data, error) in
             guard error == nil, let response = self.parsingJSON(T.self, data) else { return }
             completion(response)
         }

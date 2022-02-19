@@ -7,7 +7,12 @@
 
 import Foundation
 
-class NetworkService {
+// Add a protocol to avoid external dependencies in NetworkDataFetcher class
+protocol Networking {
+    func requestData(_ url: String, completion: @escaping(Data?, Error?) -> Void)
+}
+
+class NetworkService: Networking {
 
     func requestData(_ url: String, completion: @escaping(Data?, Error?) -> Void) {
         guard let url = URL(string: url) else { return }

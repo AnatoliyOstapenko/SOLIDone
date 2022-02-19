@@ -9,21 +9,28 @@ import Foundation
 
 class DataFetcherService {
     
-    var networkDataFetcher: NetworkDataFetcher!
-    
-    // It's fckng magic way to initialize NetworkDataFetcher, why? nobody pesponse(
-    init(networkDataFetcher: NetworkDataFetcher = NetworkDataFetcher()) {
-        self.networkDataFetcher = networkDataFetcher
+    // set var to initialize NetworkService class via protocol
+    // it's not working in UIViewController
+    var networkFetcher: Datafetcher
+    var localFetcher: Datafetcher
+    init(dataFetcher: Datafetcher = NetworkDataFetcher(), localFetcher: Datafetcher = LocalDataFetcher()) {
+        self.networkFetcher = dataFetcher
+        self.localFetcher = localFetcher
     }
+
   
-    // FckMagic
+    // Networking
     func fetchNews(completion: @escaping (NewsAPI?) -> Void) {
-        networkDataFetcher.fetchGenericJSONData(Password.url, completion: completion)
+        networkFetcher.fetchGenericJSONData(Password.url, completion: completion)
     }
     func fetchAppleApps(completion: @escaping (AppleRssAPI?) -> Void) {
-        networkDataFetcher.fetchGenericJSONData(Password.appleApps, completion: completion)
+        networkFetcher.fetchGenericJSONData(Password.appleApps, completion: completion)
     }
     func fetchAppleBooks(completion: @escaping (AppleRssAPI?) -> Void) {
-        networkDataFetcher.fetchGenericJSONData(Password.appleBooks, completion: completion)
+        networkFetcher.fetchGenericJSONData(Password.appleBooks, completion: completion)
+    }
+    // Local working
+    func fetchLocalData(completion: @escaping (NewsAPI?) -> Void) {
+        localFetcher.fetchGenericJSONData("localData.txt", completion: completion)
     }
 }

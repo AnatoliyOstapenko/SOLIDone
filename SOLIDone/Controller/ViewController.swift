@@ -27,25 +27,31 @@ class ViewController: UIViewController {
         namesButton.layer.cornerRadius = 20.0
         dataStore.loadData() // load data from Core Data
         
-        // Interaction with News Model, print every title from API
-        dataFetcherService.fetchNews { (news) in
-            guard let data = news else { return }
+//        // Interaction with News Model, print every title from API
+//        dataFetcherService.fetchNews { (news) in
+//            guard let data = news else { return }
+//            for index in 0...data.articles.count - 1 {
+//                print(data.articles[index].title)
+//            }
+//        }
+//        // Interaction with Apple RSS Model, print every artistName from API
+//        dataFetcherService.fetchAppleApps { (apps) in
+//            guard let data = apps else { return }
+//            for index in 0...data.feed.results.count - 1 {
+//                print(data.feed.results[index].artistName)
+//            }
+//        }
+//        // Interaction with Apple RSS Model, print every name from API
+//        dataFetcherService.fetchAppleBooks { (books) in
+//            guard let data = books else { return }
+//            for index in 0...data.feed.results.count - 1 {
+//                print(data.feed.results[index].name)
+//            }
+//        }
+        dataFetcherService.fetchLocalData { (localNews) in
+            guard let data = localNews else { return }
             for index in 0...data.articles.count - 1 {
                 print(data.articles[index].title)
-            }
-        }
-        // Interaction with Apple RSS Model, print every artistName from API
-        dataFetcherService.fetchAppleApps { (apps) in
-            guard let data = apps else { return }
-            for index in 0...data.feed.results.count - 1 {
-                print(data.feed.results[index].artistName)
-            }
-        }
-        // Interaction with Apple RSS Model, print every name from API
-        dataFetcherService.fetchAppleBooks { (books) in
-            guard let data = books else { return }
-            for index in 0...data.feed.results.count - 1 {
-                print(data.feed.results[index].name)
             }
         }
         
