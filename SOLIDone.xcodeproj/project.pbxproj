@@ -23,7 +23,7 @@
 		FA2B2C4027BC5B6C002AEE12 /* AppleRssAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B2C3F27BC5B6B002AEE12 /* AppleRssAPI.swift */; };
 		FA2B2C4327BDA1CC002AEE12 /* DataFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B2C4227BDA1CB002AEE12 /* DataFetcherService.swift */; };
 		FABEE6C927C131730088CC74 /* Names.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABEE6C827C131730088CC74 /* Names.storyboard */; };
-		FABEE6CC27C131D50088CC74 /* System Thin.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEE6CB27C131D50088CC74 /* System Thin.swift */; };
+		FABEE6CC27C131D50088CC74 /* NamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEE6CB27C131D50088CC74 /* NamesViewController.swift */; };
 		FAD95B4027C1716E00F97465 /* LocalDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD95B3F27C1716E00F97465 /* LocalDataFetcher.swift */; };
 		FAD95B4327C172FB00F97465 /* localData.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAD95B4227C172FA00F97465 /* localData.txt */; };
 /* End PBXBuildFile section */
@@ -47,7 +47,7 @@
 		FA2B2C3F27BC5B6B002AEE12 /* AppleRssAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleRssAPI.swift; sourceTree = "<group>"; };
 		FA2B2C4227BDA1CB002AEE12 /* DataFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcherService.swift; sourceTree = "<group>"; };
 		FABEE6C827C131730088CC74 /* Names.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Names.storyboard; sourceTree = "<group>"; };
-		FABEE6CB27C131D50088CC74 /* System Thin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "System Thin.swift"; sourceTree = "<group>"; };
+		FABEE6CB27C131D50088CC74 /* NamesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesViewController.swift; sourceTree = "<group>"; };
 		FAD95B3F27C1716E00F97465 /* LocalDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataFetcher.swift; sourceTree = "<group>"; };
 		FAD95B4227C172FA00F97465 /* localData.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = localData.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				FA26F7CF27B817DC006D2BE9 /* ViewController.swift */,
-				FABEE6CB27C131D50088CC74 /* System Thin.swift */,
+				FABEE6CB27C131D50088CC74 /* NamesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 				FA2B2C4027BC5B6C002AEE12 /* AppleRssAPI.swift in Sources */,
 				FA26F7ED27B93558006D2BE9 /* NewsAPI.swift in Sources */,
 				FA2B2C4327BDA1CC002AEE12 /* DataFetcherService.swift in Sources */,
-				FABEE6CC27C131D50088CC74 /* System Thin.swift in Sources */,
+				FABEE6CC27C131D50088CC74 /* NamesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,7 +40,7 @@ extension NamesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.namesIdentifier, for: indexPath)
         cell.textLabel?.text = array[indexPath.row].name
         cell.backgroundColor = .clear // set the same color to cell as local View backgroung color
-        cell.textLabel?.font = UIFont(name: "System Thin", size: 20)
+        cell.textLabel?.font = UIFont.preferredFont(forTextStyle: .title2)
         return cell
     }
 }
